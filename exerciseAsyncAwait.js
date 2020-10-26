@@ -48,3 +48,19 @@ const urls = [
   "https://jsonplaceholdeTYPO.typicode.com/posts",
   "https://jsonplaceholder.typicode.com/albums",
 ];
+
+const getData = async () =>  {
+  try {
+    const [users, posts, albums] = await Promise.all(
+      urls.map(async (url) => {
+        const response = await fetch(url);
+        return response.json();
+      }),
+    );
+    console.log("users", users);
+    console.log("posta", posts);
+    console.log("albums", albums);
+  } catch (err) {
+    console.log('oooooops', err)
+  }
+};
