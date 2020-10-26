@@ -5,6 +5,12 @@ fetch("https://jsonplaceholder.typicode.com/users/")
   .then((response) => response.json())
   .then(console.log);
 
+const convert = async () => {
+  const response = await fetch("https://jsonplaceholder.typicode.com/users/")
+  const data = await response.json()
+  console.log(data)
+}
+
 // #2) ADVANCED: Update the function below from the video to also have
 // async await for this line: fetch(url).then(resp => resp.json())
 // So there shouldn't be any .then() calls anymore!
